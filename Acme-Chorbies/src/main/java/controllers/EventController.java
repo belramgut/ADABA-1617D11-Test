@@ -111,7 +111,18 @@ public class EventController extends AbstractController {
 	@RequestMapping(value = "/listEventOfferMonth", method = RequestMethod.GET)
 	public ModelAndView listEventOfferMonth() {
 		ModelAndView result;
-		final Collection<Event> events = this.eventService.listEventMonthSeatsFree();
+		final Collection<Event> eventsAll = this.eventService.findAll();
+		final Collection<Event> events = new ArrayList<Event>();
+
+		for (final Event e : eventsAll) {
+			final Calendar current = new GregorianCalendar();
+			final Calendar fecha = new GregorianCalendar();
+			fecha.setTime(e.getMoment());
+
+			final long dif = this.eventService.difDiasEntre2fechas(current, fecha);
+			if (fecha.after(current) && dif <= 30 && e.getNumberSeatsOffered() > 0)
+				events.add(e);
+		}
 
 		result = new ModelAndView("event/listEventOfferMonth");
 		result.addObject("events", events);
