@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- * tiles.xml * * Copyright (C) 2017 Universidad de Sevilla * * The use 
+	of this project is hereby constrained to the conditions of the * TDG Licence, 
+	a copy of which you may download from * http://www.tdg-seville.info/License.html -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="event/list" extends="master.page">
+		<put-attribute name="title" value="Events List" />
+		<put-attribute name="body" value="/views/event/list.jsp" />
+	</definition>
+	
+	<definition name="event/list2" extends="master.page">
+		<put-attribute name="title" value="Events List" />
+		<put-attribute name="body" value="/views/event/list2.jsp" />
+	</definition>
+	
+	<definition name="event/listEventOfferMonth" extends="master.page">
+		<put-attribute name="title" value="Events List" />
+		<put-attribute name="body" value="/views/event/listEventOfferMonth.jsp" />
+	</definition>
+	
+	<definition name="event/edit" extends="master.page">
+		<put-attribute name="title" value="Edit Event" />
+		<put-attribute name="body" value="/views/event/edit.jsp" />
+	</definition>
+	
+
+	<definition name="event/forboperation" extends="master.page">
+		<put-attribute name="title" value="Forbidden operation" />
+		<put-attribute name="body" value="/views/event/errorsFromEvent.jsp" />
+	</definition>
+	
+	<definition name="chorbi/listMyEvents" extends="master.page">
+		<put-attribute name="title" value="My Events List" />
+		<put-attribute name="body" value="/views/event/list.jsp" />
+	</definition>
+
+</tiles-definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- * tiles_es.xml * * Copyright (C) 2017 Universidad de Sevilla * * The 
+	use of this project is hereby constrained to the conditions of the * TDG 
+	Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="template/list" extends="master.page">
+		<put-attribute name="title" value="Mi plantilla de busqueda" />
+		<put-attribute name="body" value="/views/template/list.jsp" />
+	</definition>
+	
+	<definition name="template/edit" extends="master.page">
+		<put-attribute name="title" value="Editar mi plantilla de busqueda" />
+		<put-attribute name="body" value="/views/template/edit.jsp" />
+	</definition>
+	
+	<definition name="coordinate/edit" extends="master.page">
+		<put-attribute name="title" value="Editar mi Coordenada" />
+		<put-attribute name="body" value="/views/template/editCoordinates.jsp" />
+	</definition>
+	
+	<definition name="template/error" extends="master.page">
+		<put-attribute name="title" value="Tarjeta de credito invalida" />
+		<put-attribute name="body" value="/views/template/error.jsp" />
+	</definition>
+	
+
+
+</tiles-definitions>
