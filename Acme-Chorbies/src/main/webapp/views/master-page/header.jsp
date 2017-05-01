@@ -40,9 +40,7 @@
 								code="master.page.administrator.list.manager" /></a></li>
 				</ul>
 			</li>
-			<li><a class="fNiv" href="manager/register.do"><spring:message
-						code="master.page.registerManager" /></a>
-			</li>
+			
 		</security:authorize>
 
 		<security:authorize access="hasRole('MANAGER')">
@@ -112,6 +110,9 @@
 						code="master.page.listEventOfferMonth" /></a></li>
 			<li><a class="fNiv" href="event/list.do"><spring:message
 						code="master.page.listEvents" /></a></li>
+			<li><a class="fNiv" href="manager/register.do"><spring:message
+						code="master.page.registerManager" /></a>
+			</li>
 
 		</security:authorize>
 
@@ -121,6 +122,9 @@
 						code="master.page.know.people" /></a></li>
 			<li><a class="fNiv" href="event/list.do"><spring:message
 						code="master.page.listEvents" /></a></li>
+			<li><a class="fNiv" href="manager/register.do"><spring:message
+						code="master.page.registerManager" /></a>
+			</li>
 
 
 

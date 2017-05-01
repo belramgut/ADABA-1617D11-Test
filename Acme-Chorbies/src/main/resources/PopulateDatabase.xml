@@ -517,7 +517,7 @@
 		<property name="description" value="Evento 9, fiesta" />
 		<property name="picture"
 			value="https://c1.staticflickr.com/3/2563/5758775767_7ab3729b69_m.jpg" />
-		<property name="numberSeatsOffered" value="16" />
+		<property name="numberSeatsOffered" value="1" />
 		<property name="manager" ref="manager2" />
 		<property name="registered">
 			<list>

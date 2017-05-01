@@ -68,7 +68,8 @@
 		<spring:message code="chorbi.termsOfUse.link" />
 	</a>
 	<form:errors cssClass="error" path="termsOfUse" />
-	<p class="mandatory"><spring:message code="mandatory.fields" /></p>
+	</br>
+	
 	<acme:submit name="save" code="chorbi.accept"/>			
 	<acme:cancel url="welcome/index.do" code="chorbi.cancel"/>
 
