@@ -162,7 +162,7 @@ public class EventService {
 		Assert.isTrue(event.getMoment().after(current));
 		event = this.eventRepository.save(event);
 
-		this.chirpService.editEventChirp(event, m);
+		//this.chirpService.editEventChirp(event, m);
 
 		return event;
 
