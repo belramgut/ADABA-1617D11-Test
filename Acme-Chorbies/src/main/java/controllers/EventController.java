@@ -120,7 +120,7 @@ public class EventController extends AbstractController {
 			fecha.setTime(e.getMoment());
 
 			final long dif = this.eventService.difDiasEntre2fechas(current, fecha);
-			if (fecha.after(current) && dif <= 30 && e.getNumberSeatsOffered() > 0)
+			if (fecha.after(current) && dif <= 2 && e.getNumberSeatsOffered() > 0)
 				events.add(e);
 		}
 

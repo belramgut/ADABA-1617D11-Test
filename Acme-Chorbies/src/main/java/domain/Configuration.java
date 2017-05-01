@@ -5,7 +5,6 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -53,7 +52,6 @@ public class Configuration extends DomainEntity {
 		this.second = second;
 	}
 
-	@Min(0)
 	@Digits(integer = 32, fraction = 2)
 	public double getManagersFee() {
 		return this.managersFee;
@@ -63,7 +61,6 @@ public class Configuration extends DomainEntity {
 		this.managersFee = managersFee;
 	}
 
-	@Min(0)
 	@Digits(integer = 32, fraction = 2)
 	public double getChorbiesFee() {
 		return this.chorbiesFee;
