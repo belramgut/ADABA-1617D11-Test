@@ -104,7 +104,7 @@ public class TasteController {
 
 			result = new ModelAndView("taste/forboperation");
 			result.addObject("forbiddenOperation", "taste.not.like.yourself");
-			result.addObject("cancelURL", "chorbi/profile.do?chorbiId=" + chorbiId);
+			result.addObject("cancelURL", "chirp/listReceivedMessages.do");
 			return result;
 
 		} else
@@ -112,14 +112,14 @@ public class TasteController {
 				if (t.getChorbi().getId() == chorbiToLike.getId()) {
 					result = new ModelAndView("taste/forboperation");
 					result.addObject("forbiddenOperation", "taste.not.twice");
-					result.addObject("cancelURL", "chorbi/profile.do?chorbiId=" + chorbiId);
+					result.addObject("cancelURL", "chirp/listReceivedMessages.do");
 					return result;
 				}
 
 		taste = this.tasteService.create(chorbiToLike);
 		result = this.createEditModelAndView(taste);
 		result.addObject("requestURI", "chorbi/chorbi/like.do?chorbiId=" + chorbiId);
-		result.addObject("cancelURL", "chorbi/profile.do?chorbiId=" + chorbiId);
+		result.addObject("cancelURL", "chirp/listReceivedMessages.do");
 		result.addObject("chorbiId", chorbiId);
 
 		return result;

@@ -72,7 +72,7 @@
 	<security:authorize access="isAuthenticated()">
 		<display:column>
 			<a
-				href="chorbi/listWhoLikeThem.do?chorbiId=${row.id}">
+				href="chorbi/listWhoLikeThem2.do?chorbiId=${row.id}">
 				<spring:message code="chorbi.ListWhoLikeThem" />
 			</a>
 
