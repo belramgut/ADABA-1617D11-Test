@@ -2,7 +2,6 @@
 package controllers;
 
 import java.util.Collection;
-import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -17,13 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import services.ChorbiService;
-import services.ConfigurationService;
-import services.CreditCardService;
 import services.TemplateService;
 import domain.Chorbi;
-import domain.Configuration;
 import domain.Coordinate;
-import domain.CreditCard;
 import domain.Template;
 
 @Controller
@@ -40,16 +35,10 @@ public class TemplateController extends AbstractController {
 	//Services
 
 	@Autowired
-	private ChorbiService			chorbiService;
+	private ChorbiService	chorbiService;
 
 	@Autowired
-	private TemplateService			templateService;
-
-	@Autowired
-	private ConfigurationService	configurationService;
-
-	@Autowired
-	private CreditCardService		creditCardService;
+	private TemplateService	templateService;
 
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -73,62 +62,14 @@ public class TemplateController extends AbstractController {
 	@RequestMapping(value = "/result", method = RequestMethod.GET)
 	public ModelAndView listByFinder() {
 		ModelAndView result;
-		Collection<Chorbi> cs;
 
-		final Chorbi t1 = this.chorbiService.findByPrincipal();
-		final Template template = t1.getTemplate();
-
-		//Credit card para comprobar la validez cada vez que se busque
-		final CreditCard c = t1.getCreditCard();
-		if (this.creditCardService.validateDate(c.getExpirationMonth(), c.getExpirationYear()) == false) {
-			result = new ModelAndView("template/error");
-			result.addObject("invalidCreditCard", "template.invalidCreditCard");
-			return result;
-		}
-
-		if (template == null) {
-			final Collection<Chorbi> cs2 = this.chorbiService.findAllNotBannedChorbies();
-			result = new ModelAndView("template/result");
-			result.addObject("chorbies", cs2);
-			result.addObject("requestURI", "template/result.do");
-			return result;
-
-		} else {
-
-			final Configuration confi = this.configurationService.findConfiguration();
-			final Integer horaTotal = this.configurationService.getHoraConfiguration(confi);
-
-			final Date momentTemplate = template.getMoment();
-			if (momentTemplate != null) {
-
-				final Date currentDate = new Date();
-
-				final long diff = (currentDate.getTime() - 10000) - momentTemplate.getTime();
-				final long minutes = (diff / 1000) / 60;
-
-				//cambiar horaTotal por 720 para comprobar que funciona ya que no existe configuration
-				if (minutes > horaTotal || template.getChorbies().isEmpty()) {
-					cs = this.templateService.findChorbiesByMyTemplate(template);
-					template.setMoment(new Date());
-
-					template.setChorbies(cs);
-					this.templateService.save(template);
-				} else
-					cs = template.getChorbies();
-			} else {
-				cs = this.templateService.findChorbiesByMyTemplate(template);
-				template.setMoment(new Date());
-
-				template.setChorbies(cs);
-				this.templateService.save(template);
-			}
-
-			result = new ModelAndView("template/result");
-			result.addObject("chorbies", cs);
-			result.addObject("requestURI", "template/result.do");
-		}
+		final Collection<Chorbi> cs2 = this.chorbiService.findAllNotBannedChorbies();
+		result = new ModelAndView("template/result");
+		result.addObject("chorbies", cs2);
+		result.addObject("requestURI", "template/result.do");
 
 		return result;
+
 	}
 
 	//Edit coordinates
@@ -159,7 +100,7 @@ public class TemplateController extends AbstractController {
 			if (binding.getGlobalError() != null)
 				result = this.createEditModelAndView(template, binding.getGlobalError().getCode());
 			else
-				result = this.createEditModelAndView(template);
+				result = this.createEditModelAndView(template, "template.commit.error");
 
 		} else
 			try {

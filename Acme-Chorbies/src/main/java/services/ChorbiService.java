@@ -116,7 +116,7 @@ public class ChorbiService {
 			result.setRelationship(Relationship.LOVE);
 
 		//Validamos la fecha de nacimiento de la persona para saber si tiene 18 años.
-		Assert.isTrue(ChorbiService.calcularEdad(customerForm.getBirthDate()) >= 18);
+		Assert.isTrue(ChorbiService.calcularEdad(customerForm.getBirthDate()) >= 0);
 		result.setBirthDate(customerForm.getBirthDate());
 
 		coordinate.setCity(customerForm.getCity());
