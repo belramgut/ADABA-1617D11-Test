@@ -45,7 +45,7 @@
 	
 	<security:authorize access="isAuthenticated()">
 		<display:column>
-			<a href="manager/display.do?managerId=${row.manager.id}"> <jstl:out value="${row.manager.name}"></jstl:out>
+			<a href="managerDomain/display.do?managerId=${row.manager.id}"> <jstl:out value="${row.manager.name}"></jstl:out>
 			</a>
 
 		</display:column>
@@ -92,7 +92,7 @@
 		
 	<security:authorize access="isAuthenticated()">
 		<display:column>
-			<a href="manager/display.do?managerId=${row.manager.id}"> <jstl:out value="${row.manager.name}"></jstl:out>
+			<a href="managerDomain/display.do?managerId=${row.manager.id}"> <jstl:out value="${row.manager.name}"></jstl:out>
 			</a>
 
 		</display:column>
@@ -160,7 +160,7 @@
 	
 	<security:authorize access="isAuthenticated()">
 		<display:column>
-			<a href="manager/display.do?managerId=${row.manager.id}"> <jstl:out value="${row.manager.name}"></jstl:out>
+			<a href="managerDomain/display.do?managerId=${row.manager.id}"> <jstl:out value="${row.manager.name}"></jstl:out>
 			</a>
 
 		</display:column>

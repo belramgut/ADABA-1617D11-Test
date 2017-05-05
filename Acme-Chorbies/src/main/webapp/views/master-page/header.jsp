@@ -55,7 +55,7 @@
 								code="master.page.list.create.event" /></a></li>			
 
 				</ul></li>
-				<li><a class="fNiv" href="manager/viewProfile.do"><spring:message
+				<li><a class="fNiv" href="managerDomain/viewProfile.do"><spring:message
 						code="master.page.viewMyProfile" /></a>
 			</li>
 				
@@ -110,7 +110,7 @@
 						code="master.page.listEventOfferMonth" /></a></li>
 			<li><a class="fNiv" href="event/list.do"><spring:message
 						code="master.page.listEvents" /></a></li>
-			<li><a class="fNiv" href="manager/register.do"><spring:message
+			<li><a class="fNiv" href="managerDomain/register.do"><spring:message
 						code="master.page.registerManager" /></a>
 			</li>
 
@@ -122,7 +122,7 @@
 						code="master.page.know.people" /></a></li>
 			<li><a class="fNiv" href="event/list.do"><spring:message
 						code="master.page.listEvents" /></a></li>
-			<li><a class="fNiv" href="manager/register.do"><spring:message
+			<li><a class="fNiv" href="managerDomain/register.do"><spring:message
 						code="master.page.registerManager" /></a>
 			</li>
 

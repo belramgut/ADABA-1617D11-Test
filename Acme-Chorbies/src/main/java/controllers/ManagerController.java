@@ -19,7 +19,7 @@ import domain.Manager;
 import form.RegistrationFormManager;
 
 @Controller
-@RequestMapping("/manager")
+@RequestMapping("/managerDomain")
 public class ManagerController extends AbstractController {
 
 	// Constructors -----------------------------------------------------------
@@ -101,7 +101,7 @@ public class ManagerController extends AbstractController {
 		result.addObject("principal", principal);
 		result.addObject("creditCard", creditCard);
 		result.addObject("toCreditCard", toCreditCard);
-		result.addObject("requestURI", "manager/profile.do?managerId=" + managerId);
+		result.addObject("requestURI", "managerDomain/profile.do?managerId=" + managerId);
 
 		return result;
 	}
